@@ -4,18 +4,18 @@ class Person:
     def __init__(self, name: str, age: int) -> None:
         self.name = name
         self.age = age
-        self.people[name] = self
+        Person.people[name] = self
 
 
 def create_person_list(people: list) -> list[Person]:
-    persons = []
+    person_objects = []
 
     for person_info in people:
         person = Person(
             person_info.get("name"),
             person_info.get("age")
         )
-        persons.append(person)
+        person_objects.append(person)
 
     for person_info in people:
         person_name = person_info.get("name")
@@ -29,4 +29,4 @@ def create_person_list(people: list) -> list[Person]:
         if husband_name:
             person.husband = Person.people.get(husband_name)
 
-    return persons
+    return person_objects
