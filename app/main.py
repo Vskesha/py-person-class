@@ -11,6 +11,7 @@ def create_person_list(people: list) -> list[Person]:
     person_objects = []
 
     for person_info in people:
+
         person = Person(
             person_info.get("name"),
             person_info.get("age")
@@ -18,6 +19,7 @@ def create_person_list(people: list) -> list[Person]:
         person_objects.append(person)
 
     for person_info in people:
+
         person_name = person_info.get("name")
         person = Person.people.get(person_name)
 
